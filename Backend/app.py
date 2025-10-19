@@ -114,19 +114,23 @@ def Login():
 def Get_All_Logs(): 
     try:  
         logs = session.query(Logs).all()
-        log_list = [
-            {
+        log_list = []
+        for log in logs:
+            user_photo = session.query(User_Photo).filter_by(Photo_ID=log.User_Photo_ID).first()
+            output_photo = session.query(Output_Photo).filter_by(Photo_ID=log.Output_Photo_ID).first()
+
+            log_list.append({
                 "Log_ID": log.Log_ID,
                 "User_ID": log.User_ID,
-                "User_Photo_ID": log.User_Photo_ID,
-                "Output_Photo_ID": log.Output_Photo_ID,
+                "User_Photo": user_photo.Image_Url if user_photo else None,
+                "Output_Photo": output_photo.Image_Url if output_photo else None,
                 "Tags": log.Tags,
                 "Description": log.Description,
                 "Calibration": log.Calibration,
-                "Created_at": log.Created_at.isoformat()
-            }
-            for log in logs
-        ]
+                "Created_at": log.Created_at.isoformat(),
+                "Location": user_photo.Location if user_photo and hasattr(user_photo, "Location") else None
+            })
+
         return jsonify(log_list), 200
 
     except Exception as e:

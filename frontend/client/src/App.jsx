@@ -8,6 +8,7 @@ import AddLog from './pages/AddLog';
 import MyLogs from './pages/MyLogs';
 import LogDetail from './pages/LogDetail';
 import ProtectedRoute from './components/Protected_Route';
+import CommunityLogs from './pages/Community_Logs';
 
 function AppRoutes() {
   const location = useLocation();
@@ -32,7 +33,7 @@ function AppRoutes() {
         <Route path="/add-log" element={<ProtectedRoute><AddLog /></ProtectedRoute>} />
         <Route path="/my-logs" element={<ProtectedRoute><MyLogs /></ProtectedRoute>} />
         <Route path="/log/:id" element={<ProtectedRoute><LogDetail /></ProtectedRoute>} />
-        <Route path="/community-logs" element={<div>Community Logs Page</div>} />
+        <Route path="/community-logs" element={<ProtectedRoute> <CommunityLogs /> </ProtectedRoute>} />
         <Route path="/forum" element={<div>Forum Page</div>} />
         <Route path="/laika" element={<div>Laika Page</div>} />
       </Routes>
