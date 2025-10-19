@@ -1,0 +1,89 @@
+.account-page .page-title {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.account-content {
+    display: flex;
+    gap: 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--secondary-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.pfp-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.account-pfp {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-color);
+}
+
+.change-pfp-btn {
+    background: none;
+    border: 1px solid var(--secondary-text);
+    color: var(--secondary-text);
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.change-pfp-btn:hover {
+    background-color: var(--secondary-text);
+    color: var(--primary-bg);
+    border-color: var(--secondary-text);
+}
+
+.details-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.detail-item {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    align-items: center;
+    gap: 1rem;
+}
+
+.detail-item label {
+    font-weight: 500;
+    color: var(--secondary-text);
+}
+
+.detail-item input {
+    background-color: var(--primary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 10px;
+    color: var(--primary-text);
+    font-size: 1rem;
+}
+
+.detail-item button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.detail-item button:hover {
+    background-color: var(--accent-hover);
+}

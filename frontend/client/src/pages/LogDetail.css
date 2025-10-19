@@ -1,0 +1,70 @@
+.logdetail-page {
+    max-width: 100%;
+ /* Makes the overall page taller */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.log-image-container {
+    width: 100%;
+    max-height: 160vh; /* Increased from 120vh */
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.log-image-container img {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%; /* Fill the container */
+    object-fit: cover; /* Keeps proportions while filling space */
+}
+
+.log-details-container {
+    padding: 2rem; /* Slightly more padding */
+    background-color: var(--secondary-bg);
+    border-radius: 8px;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.log-details-container h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-top: 0;
+}
+
+.details-grid {
+    display: flex;
+    flex-direction: column;
+    color: var(--secondary-text);
+}
+
+.details-grid strong {
+    color: var(--primary-text);
+}
+
+.laika-edge-bar {
+    position: fixed;
+    bottom: 0;
+    right: 30px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    background-color: var(--accent-color);
+    color: white;
+    padding: 25px 12px; /* Slightly bigger bar */
+    border-radius: 10px 10px 0 0;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.laika-edge-bar:hover {
+    background-color: var(--accent-hover);
+}

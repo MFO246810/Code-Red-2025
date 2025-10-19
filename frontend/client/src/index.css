@@ -1,0 +1,49 @@
+:root {
+  --primary-bg: #0d0f1a;
+  --secondary-bg: #1a1d2d;
+  --accent-color: #6d5acd;
+  --accent-hover: #806ad9;
+  --primary-text: #e0e0e0;
+  --secondary-text: #a0a0b0;
+  --border-color: #30334a;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrap {
+  flex: 1;
+  padding-top: 70px; /* Height of the main header */
+}
+
+.page-container {
+    padding: 2rem 4rem;
+}

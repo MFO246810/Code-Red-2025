@@ -1,0 +1,55 @@
+.mylogs-page .page-title {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.logs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.log-item {
+    display: flex;
+    gap: 1.5rem;
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    color: var(--primary-text);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.log-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    border-color: var(--accent-color);
+}
+
+.log-thumbnail {
+    width: 200px;
+    height: 125px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.log-info h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+    color: var(--primary-text);
+}
+
+.log-info p {
+    margin: 4px 0;
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+}
+
+.log-info p strong {
+    color: var(--primary-text);
+}

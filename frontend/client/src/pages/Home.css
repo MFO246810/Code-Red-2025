@@ -1,0 +1,47 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center;
+    height: calc(100vh - 120px); /* Full viewport height minus headers */
+    position: relative;
+}
+
+.home-hero {
+    /* This div holds the main title and subtitle */
+}
+
+.home-title {
+    font-family: var(--font-heading);
+    font-size: 8rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 10px;
+    background: -webkit-linear-gradient(45deg, #eee, #aaa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.home-subtitle {
+    font-size: 1.5rem;
+    color: var(--secondary-text);
+    margin-top: 1rem;
+    font-weight: 400;
+    animation: fadeIn 2s ease-in-out 0.5s;
+    animation-fill-mode: backwards;
+}
+
+.home-footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: #666;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

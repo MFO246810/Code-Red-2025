@@ -1,0 +1,12 @@
+.content-wrap {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  flex: 1; /* Take remaining space if using flex layout in parent */
+  padding: 2rem; /* Space inside the content */
+  margin: 0 auto; /* Center horizontally if max-width is set */
+  margin-top: 120px;
+  width: 100%;
+  max-width: 1200px; /* Limit content width on large screens */
+  box-sizing: border-box;
+  min-height: calc(100vh - 80px); /* Adjust for header height if needed */
+}
