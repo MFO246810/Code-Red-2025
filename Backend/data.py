@@ -51,6 +51,7 @@ def Get_Complete_Job(job_id, Session_Key):
     Response = requests.post(f'http://nova.astrometry.net/api/jobs/{job_id}/info/', headers=headers)
 
     print(Response.json())
+    return Response.json()
 
 def Get_Complete_Files(job_id, Session_Key):
     data = {"session": Session_Key}
@@ -58,8 +59,8 @@ def Get_Complete_Files(job_id, Session_Key):
     base_url = "http://nova.astrometry.net"
     endpoints = [
         f"/annotated_display/{job_id}",
-        f"/red_green_image_display/{job_id}",
-        f"/extraction_image_display/{job_id}"
+        #f"/red_green_image_display/{job_id}",
+        #f"/extraction_image_display/{job_id}"
     ]
 
     for endpoint in endpoints:
@@ -75,6 +76,7 @@ def Get_Complete_Files(job_id, Session_Key):
                 for chunk in response.iter_content(8192):
                     f.write(chunk)
             print(f"✅ Saved {filename}")
+            return filename
         else:
             print(f"⚠️ Could not download {endpoint} (status: {response.status_code})")
 
@@ -88,9 +90,13 @@ def Check_Status(SUBID):
         if data == []:
             status = False
 
+def Get_Image_Data(img_uri):
+    Sub_id, Session_Key = Process_Image(img_uri)
+    Check_Status(Sub_id)
+    Data = Get_Complete_Job(Sub_id, Session_Key)
+    Image_filepath = Get_Complete_Files(Sub_id, Session_Key)
+
+    return Data, Image_filepath
 
 
-Sub_id, Session_Key = Process_Image("./Sample.jpg")
-Check_Status(Sub_id)
-Get_Complete_Job(Sub_id, Session_Key)
-Get_Complete_Files(Sub_id, Session_Key)
+

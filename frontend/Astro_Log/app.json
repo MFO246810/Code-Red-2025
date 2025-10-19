@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "mobile",
-    "slug": "mobile",
+    "name": "Astro_Log",
+    "slug": "Astro_Log",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "mobile",
+    "scheme": "astrolog",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {

@@ -40,7 +40,6 @@ class Output_Photo(Base):
 
     Photo_ID = Column(BigInteger, primary_key=True, nullable=False)
     Image_Url = Column(Text, nullable=False)
-    Caption = Column(Text, nullable=False)
     Created_At = Column(TIMESTAMP, nullable=False)
 
     # Relationships
@@ -54,6 +53,7 @@ class Logs(Base):
     User_ID = Column(BigInteger, ForeignKey("User.User_ID"), nullable=False)
     User_Photo_ID = Column(BigInteger, ForeignKey("User_Photo.Photo_ID"), nullable=False)
     Output_Photo_ID = Column(BigInteger, ForeignKey("Output_Photo.Photo_ID"), nullable=False)
+    Title = Column(String(255), nullable=False)
     Tags = Column(String(255), nullable=False)
     Created_at = Column(TIMESTAMP, nullable=False)
     Calibration = Column(JSON, nullable=False)
